@@ -101,3 +101,11 @@ function compareDates(date1, date2, ops) {
     }
    return result
 }
+
+function getToday() {
+    let today = new Date()
+    let day = today.getDate()
+    let mon = today.getMonth() + 1
+    let yr = today.getFullYear()
+    return `${mon}/${day}/${yr}`
+}
