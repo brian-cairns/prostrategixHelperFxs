@@ -89,3 +89,15 @@ function resolveLeap(date) {
     }
     return date
 }
+
+function compareDates(date1, date2, ops) {
+    const parsedDate1 = Date.parse(date1)
+    const parsedDate2 = Date.parse(date2)
+    let result = ''
+    if(ops == 'gt') {
+        parsedDate1 > parsedDate2 ? result = date1 : result = date2
+    } else {
+        parsedDate1 < parsedDate2 ? result = date1 : result = date2
+    }
+   return result
+}
