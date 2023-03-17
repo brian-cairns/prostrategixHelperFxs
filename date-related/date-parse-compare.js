@@ -1,5 +1,6 @@
 //add days to dates in MM/DD/YYYY format
 const shortMonths = [2, 4, 6, 9, 11,'2','4','6','9','11']
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 function addDays(date, days) {
     let parsedDate = date.split('/')
     let rawDate = []
@@ -108,4 +109,15 @@ function getToday() {
     let mon = today.getMonth() + 1
     let yr = today.getFullYear()
     return `${mon}/${day}/${yr}`
+}
+
+//Parses Dates 'Day Mon Date Year HH:MM:OO GMT-0400'
+export function parseDateLong(date) {
+    let parsed = date.split(' ')
+    let mon = convertMonth(date[1])
+    return `${mon}/${date[2]}/${date[3]}`
+}
+   
+function convertMonth(mon) {
+    return months.findIndex(mon)
 }
